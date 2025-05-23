@@ -20,6 +20,9 @@ app.include_router(varieties.router)
 @app.get("/")
 def root():
     return {"message": "Cannacore API demo funcionando correctamente"}
+    from app.routers import predict
+app.include_router(predict.router)
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
