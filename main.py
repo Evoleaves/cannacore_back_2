@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import users, varieties, mothers, plants, lots
+from app.routers import users, varieties, mothers, plants, lots, predict
 import os
 import uvicorn
 
@@ -20,6 +20,7 @@ app.include_router(varieties.router)
 app.include_router(mothers.router)
 app.include_router(plants.router)
 app.include_router(lots.router)
+app.include_router(predict.router)
 
 @app.get("/")
 def root():
